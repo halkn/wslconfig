@@ -11,6 +11,7 @@ export SHELL=bash
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export XDG_CACHE_HOME=~/.cache
+export XDG_BIN_HOME=~/.local/bin
 
 # less
 export LESS='-g -i -M -R -S -W -z-4 -x4'
@@ -19,10 +20,8 @@ export LESSHISTFILE=-
 # ---------------------------------------------------------------------------
 # PATH
 # ---------------------------------------------------------------------------
-# for uv (python package manager)
-# See https://docs.astral.sh/uv/
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
+if [ -d "$XDG_BIN_HOME" ] ; then
+    PATH="$XDG_BIN_HOME:$PATH"
 fi
 
 # ---------------------------------------------------------------------------
@@ -35,3 +34,4 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+

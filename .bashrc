@@ -63,3 +63,4 @@ alias ..='cd ..'
 alias path='echo $PATH | tr ":" "\n"'
 alias bs="source ~/.bashrc"
 alias :q="exit"
+
