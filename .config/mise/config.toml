@@ -1,0 +1,22 @@
+[tools]
+# cmd
+ripgrep = "latest"
+fd = "latest"
+starship = "latest"
+
+# dev
+node = "lts"
+uv = "latest"
+
+[settings]
+experimental = true
+jobs = 4
+paranoid = false
+auto_install = true
+asdf_compat = false
+always_keep_download = false
+always_keep_install = false
+
+# python
+python.uv_venv_auto = true
+idiomatic_version_file_enable_tools = ["python", "node"]

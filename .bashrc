@@ -11,7 +11,7 @@ esac
 # options
 # ---------------------------------------------------------------------------
 # HISTORY
-export HISTFILE="$HOME/.cache/.bash_history"
+export HISTFILE="$XDG_CACHE_HOME/.bash_history"
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=10000
@@ -64,3 +64,22 @@ alias path='echo $PATH | tr ":" "\n"'
 alias bs="source ~/.bashrc"
 alias :q="exit"
 
+# ---------------------------------------------------------------------------
+# tools
+# ---------------------------------------------------------------------------
+# mise
+if type mise > /dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
+
+# uv
+if type uv > /dev/null 2>&1; then
+  eval "$(uv generate-shell-completion basg)"
+fi
+
+# ---------------------------------------------------------------------------
+# prompt
+# ---------------------------------------------------------------------------
+if type starship > /dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
