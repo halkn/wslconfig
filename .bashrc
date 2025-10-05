@@ -3,8 +3,8 @@
 # ---------------------------------------------------------------------------
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+  *i*) ;;
+  *) return ;;
 esac
 
 # ---------------------------------------------------------------------------
@@ -19,12 +19,10 @@ shopt -s histappend
 
 # TERM
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+  xterm-color | *-256color) color_prompt=yes ;;
 esac
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\n\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\n\$ '
 fi
 unset color_prompt
 
@@ -68,18 +66,18 @@ alias :q="exit"
 # tools
 # ---------------------------------------------------------------------------
 # mise
-if type mise > /dev/null 2>&1; then
-  eval "$(mise activate bash)"
+if type mise >/dev/null 2>&1; then
+  eval "$(mise activate bash --shims)"
 fi
 
 # uv
-if type uv > /dev/null 2>&1; then
-  eval "$(uv generate-shell-completion basg)"
+if type uv >/dev/null 2>&1; then
+  eval "$(uv generate-shell-completion bash)"
 fi
 
 # ---------------------------------------------------------------------------
 # prompt
 # ---------------------------------------------------------------------------
-if type starship > /dev/null 2>&1; then
+if type starship >/dev/null 2>&1; then
   eval "$(starship init bash)"
 fi

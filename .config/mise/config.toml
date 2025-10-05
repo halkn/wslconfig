@@ -4,6 +4,13 @@ ripgrep = "latest"
 fd = "latest"
 starship = "latest"
 
+# editor
+neovim = "nightly"
+lua-language-server = "latest"
+shfmt = "latest"
+shellcheck = "latest"
+"npm:bash-language-server" = "latest"
+
 # dev
 node = "lts"
 uv = "latest"
